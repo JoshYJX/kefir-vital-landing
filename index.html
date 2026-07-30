@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kéfir Vital — Probióticos Naturales</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Menú de Navegación -->
+    <nav class="menu">
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="Logo Kéfir Vital" class="logo-img">
+            <span class="logo-texto">Kéfir<span class="logo-acento">Vital</span></span>
+        </a>
+        <div class="enlaces">
+            <a href="#" class="nav-link">Inicio</a>
+            <a href="#beneficios" class="nav-link">Beneficios</a>
+            <a href="#productos" class="nav-link">Productos</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="hero">
+        <h1 class="titulo">Sana tu digestión desde adentro</h1>
+        <p class="subtitulo">Kéfir artesanal 100% orgánico, cargado de probióticos vivos para tu bienestar diario.</p>
+        <a href="#" class="cta">Prueba el tuyo</a>
+        
+        <div class="scroll-indicador">↓</div>
+    </header>
+
+    <!-- Sección de Beneficios (Se activa con tu JS al hacer Scroll) -->
+    <section id="beneficios" class="beneficios oculto"> 
+        <div class="tarjeta">
+            <h3>Refuerza tu Flora</h3>
+            <p>Miles de millones de bacterias benéficas activas.</p>
+        </div>
+        <div class="tarjeta">
+            <h3>100% Artesanal</h3>
+            <p>Fermentado pacientemente sin químicos ni aditivos.</p>
+        </div>
+        <div class="tarjeta">
+            <h3>Más Energía</h3>
+            <p>Mejora la absorción de nutrientes esenciales.</p>
+        </div>
+        <div class="tarjeta">
+            <h3>Estimula tus Defensas</h3>
+            <p>Contribuye a fortalecer tu sistema inmunológico de forma natural.</p>
+        </div>
+        <div class="tarjeta">
+            <h3>Equilibra tu Flora</h3>
+            <p>Ayuda a mantener un balance saludable e inhibe bacterias no deseadas.</p>
+        </div>
+        <div class="tarjeta">
+            <h3>Más Vitaminas</h3>
+            <p>Favorece la producción natural de vitaminas esenciales para tu cuerpo.</p>
+        </div>
+        <div class="tarjeta">
+            <h3>Más Antioxidantes</h3>
+            <p>Mejora la capacidad de tu cuerpo para aprovechar los antioxidantes de tu dieta.</p>
+        </div>
+        <div class="tarjeta">
+            <h3>Apoya tu Desintoxicación</h3>
+            <p>Favorece los procesos naturales de tu cuerpo para eliminar toxinas.</p>
+        </div>
+        <div class="tarjeta">
+            <h3>Cuida tu Colesterol</h3>
+            <p>Su efecto metabólico puede contribuir a niveles más saludables de colesterol.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Productos -->
+    <section id="productos" class="productos oculto">
+        <h2 class="productos-titulo">Nuestros Productos</h2>
+        <div class="productos-grid">
+            <div class="producto-tarjeta">
+                <div class="producto-img-contenedor">
+                    <img src="images/queso-kefir.png" alt="Queso de Kéfir Artesanal" class="producto-img">
+                </div>
+                <h3>Queso de Kéfir</h3>
+                <p>Cremoso, suave y lleno de probióticos vivos. Ideal para untar o acompañar tus comidas favoritas.</p>
+            </div>
+            <div class="producto-tarjeta">
+                <div class="producto-img-contenedor">
+                    <img src="images/kefir-botella.png" alt="Kéfir Vital Original" class="producto-img">
+                </div>
+                <h3>Kéfir Vital Original</h3>
+                <p>Nuestra bebida clásica de kéfir de leche, artesanal y natural, refrigerada para conservar todo su valor probiótico.</p>
+            </div>
+            <div class="producto-tarjeta">
+                <div class="producto-img-contenedor">
+                    <img src="images/kombucha.png" alt="Kombucha Té Rojo con Piña" class="producto-img">
+                </div>
+                <h3>Kombucha Té Rojo con Piña</h3>
+                <p>Refrescante fermentado artesanal, hecho con dedicación. Presentación de 473ml.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto oculto">
+        <h2 class="contacto-titulo">Contáctanos</h2>
+        <p class="contacto-subtitulo">¿Tienes dudas o quieres hacer un pedido? Escríbenos.</p>
+
+        <form id="formulario-contacto" class="formulario-contacto">
+            <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+
+            <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+            </div>
+
+            <p id="error-contacto" class="error-contacto"></p>
+
+            <button type="submit" class="cta cta-formulario">Enviar mensaje</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-copy">© 2026 Kéfir Vital. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Conexión con JS -->
+    <script src="observar.js"></script>
+</body>
+</html>
