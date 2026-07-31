@@ -1,3 +1,5 @@
+import { GestorContactos } from "./formulario.js";
+
 // ---------------------------------------------------------------
 // Observador de scroll: anima las secciones .oculto al aparecer
 // ---------------------------------------------------------------
@@ -14,43 +16,10 @@ document.querySelectorAll(".oculto").forEach((el) => {
 });
 
 // ---------------------------------------------------------------
-// Formulario de contacto (ahora tipado con TypeScript)
+// Formulario de contacto: ahora gestionado por la clase GestorContactos
+// (antes era JS suelto con funciones independientes)
 // ---------------------------------------------------------------
-const formularioContacto = document.querySelector("#formulario-contacto") as HTMLFormElement;
-const errorContacto = document.querySelector("#error-contacto") as HTMLElement;
+const gestor = new GestorContactos("#formulario-contacto", "#error-contacto", "#lista-mensajes");
 
-function validarFormulario(nombre: string, correo: string, mensaje: string): string {
-  if (nombre.trim().length < 3) {
-    return "El nombre debe tener al menos 3 caracteres.";
-  }
-  if (!correo.includes("@")) {
-    return "Ingresa un correo electrónico válido.";
-  }
-  if (mensaje.trim().length < 5) {
-    return "El mensaje es demasiado corto.";
-  }
-  return "";
-}
-
-formularioContacto.addEventListener("submit", (evento: Event) => {
-  evento.preventDefault();
-
-  const nombreInput = document.querySelector("#nombre") as HTMLInputElement;
-  const correoInput = document.querySelector("#correo") as HTMLInputElement;
-  const mensajeInput = document.querySelector("#mensaje") as HTMLTextAreaElement;
-
-  const nombre = nombreInput.value;
-  const correo = correoInput.value;
-  const mensaje = mensajeInput.value;
-
-  const errorEncontrado = validarFormulario(nombre, correo, mensaje);
-
-  if (errorEncontrado) {
-    errorContacto.textContent = errorEncontrado;
-    return;
-  }
-
-  errorContacto.textContent = "";
-  alert(`¡Gracias, ${nombre}! Recibimos tu mensaje y te contactaremos a ${correo}.`);
-  formularioContacto.reset();
-});
+const btnGuardar = document.querySelector("#guardar-mensajes") as HTMLButtonElement;
+btnGuardar?.addEventListener("click", () => gestor.guardarJSON());

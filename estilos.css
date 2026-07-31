@@ -338,6 +338,42 @@ body {
     font-family: inherit;
 }
 
+.lista-mensajes {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+    text-align: left;
+}
+
+.lista-mensajes li {
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #4a5568;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.boton-descargar {
+    display: block;
+    margin: 16px auto 0 auto;
+    background: transparent;
+    border: 1px solid #2b6cb0;
+    color: #2b6cb0;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.boton-descargar:hover {
+    background: #2b6cb0;
+    color: #fff;
+}
+
 /* ==========================================================================
    6. FOOTER
    ========================================================================== */
