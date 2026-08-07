@@ -24,6 +24,7 @@
   "homepage": "https://github.com/JoshYJX/kefir-vital-landing#readme",
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "sass": "^1.102.0",
     "typescript": "^7.0.2",
     "vite": "^8.2.0"
   }

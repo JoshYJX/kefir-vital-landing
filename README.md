@@ -32,12 +32,18 @@ como actividad de las sesiones 13–16 (AHD3-FE).
 - Contacto (formulario)
 - Footer
 
-## Tecnologías
+## Tecnologías y justificación
 
-- HTML5 y CSS3
-- TypeScript *(a integrar en la Fase 4)*
-- Programación Orientada a Objetos *(a integrar en la Fase 5)*
-- Git y GitHub
+| Tecnología | Por qué la usamos |
+| --- | --- |
+| HTML5 semántico | Estructura clara y accesible del contenido |
+| SASS | Estilos mantenibles con variables y anidamiento |
+| Media Queries | Adaptar el sitio a móvil, tableta y escritorio |
+| Animaciones CSS | Mejorar la experiencia sin librerías pesadas |
+| Git y GitHub | Control de versiones y respaldo en la nube |
+| JavaScript (POO) | Lógica de la sección de Testimonios, sin necesidad de tipado |
+| TypeScript + POO | Lógica tipada, segura y organizada en clases para productos y formulario |
+| Vite | Servidor de desarrollo rápido y compilación a producción |
 
 ## Cómo ejecutar
 
