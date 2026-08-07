@@ -2,12 +2,13 @@
   "name": "ahd2-ra1-dfe",
   "version": "1.0.0",
   "description": "Landing page profesional migrada a control de versiones, TypeScript y POO\r como actividad de las sesiones 13–16 (AHD3-FE).",
-  "main": "observar.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/JoshYJX/kefir-vital-landing#readme",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "typescript": "^7.0.2",
     "vite": "^8.2.0"
   }
