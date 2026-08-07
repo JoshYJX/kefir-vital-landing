@@ -1,0 +1,502 @@
+// ==========================================================================
+// VARIABLES — Paleta Kéfir Vital, definida una sola vez
+// ==========================================================================
+$color-primario: #2b6cb0;
+$color-primario-oscuro: #2c5282;
+$color-acento: #48bb78; // Verde probiótico
+$color-acento-hover: #38a169;
+$color-texto: #2d3748;
+$color-texto-secundario: #4a5568;
+$color-texto-suave: #718096;
+$color-fondo: #f7fafc;
+$color-borde: #e2e8f0;
+$color-error: #e53e3e;
+$color-footer-texto: #a0aec0;
+
+$espaciado: 1rem;
+$radio-tarjeta: 16px;
+$radio-boton: 30px;
+$sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.05);
+$sombra-hover: 0 15px 30px rgba(43, 108, 176, 0.15);
+$transicion-rapida: 0.3s ease;
+
+// ==========================================================================
+// RESETEO Y DISEÑO GLOBAL — mobile-first: esta es la base para pantallas
+// pequeñas; los @media más abajo van agregando/ajustando para tableta y
+// escritorio.
+// ==========================================================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $color-fondo;
+  color: $color-texto;
+  overflow-x: hidden;
+}
+
+// ==========================================================================
+// MENÚ
+// ==========================================================================
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: $color-primario;
+  text-decoration: none;
+
+  &-img {
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  &-texto {
+    white-space: nowrap;
+  }
+
+  &-acento {
+    color: $color-acento;
+  }
+}
+
+.enlaces {
+  display: flex;
+  gap: 15px;
+
+  @media (min-width: 768px) {
+    gap: 20px;
+  }
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: $color-texto-secundario;
+  font-weight: 500;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: $color-acento;
+    transition: width $transicion-rapida;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+// ==========================================================================
+// HERO
+// ==========================================================================
+.hero {
+  background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+  color: $color-primario-oscuro;
+  text-align: center;
+  padding: 60px 20px;
+
+  @media (min-width: 1024px) {
+    padding: 120px 20px;
+  }
+}
+
+.titulo {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  color: $color-primario;
+  animation: aparecer 1.5s ease-in forwards;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+  color: $color-texto-secundario;
+  animation: subir 1.2s ease-out 0.5s forwards;
+  opacity: 0;
+
+  @media (min-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+.scroll-indicador {
+  margin-top: 50px;
+  font-size: 2rem;
+  color: $color-primario;
+  animation: rebote 1.4s ease-in-out infinite;
+}
+
+// Botón llamado a la acción
+.cta {
+  display: inline-block;
+  background-color: $color-acento;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: $radio-boton;
+  text-decoration: none;
+  font-weight: bold;
+  animation: pulsoKefir 2s infinite;
+  transition: background-color $transicion-rapida;
+
+  &:hover {
+    background-color: $color-acento-hover;
+  }
+}
+
+// ==========================================================================
+// BENEFICIOS
+// ==========================================================================
+.beneficios {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: -20px auto 40px auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  perspective: 1000px;
+
+  @media (min-width: 768px) {
+    gap: 24px;
+    margin: -50px auto 60px auto;
+  }
+}
+
+.tarjeta {
+  background: #fff;
+  padding: 30px 24px;
+  border-radius: $radio-tarjeta;
+  box-shadow: $sombra-suave;
+  flex: 1;
+  min-width: 100%;
+  max-width: 350px;
+  text-align: center;
+  transform-style: preserve-3d;
+  opacity: 0;
+  transition: transform 0.5s ease, box-shadow $transicion-rapida;
+
+  @media (min-width: 768px) {
+    min-width: 280px;
+  }
+
+  h3 {
+    color: $color-primario;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $color-texto-suave;
+    font-size: 0.95rem;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+
+    @media (min-width: 768px) {
+      transform: translateY(-8px) rotateY(8deg);
+    }
+
+    box-shadow: $sombra-hover;
+  }
+}
+
+// La animación de entrada solo se dispara cuando .beneficios ya es visible
+// (clase agregada por observar.js vía IntersectionObserver)
+.beneficios.visible .tarjeta {
+  animation: entrar 0.8s ease-out forwards;
+
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+// Clases activadas por JS
+.oculto {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// ==========================================================================
+// PRODUCTOS
+// ==========================================================================
+.productos {
+  max-width: 1200px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+
+  &-titulo {
+    text-align: center;
+    font-size: 1.8rem;
+    color: $color-primario;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+}
+
+.producto-tarjeta {
+  background: #fff;
+  border-radius: $radio-tarjeta;
+  box-shadow: $sombra-suave;
+  overflow: hidden;
+  flex: 1;
+  min-width: 100%;
+  max-width: 350px;
+  text-align: center;
+  transition: transform $transicion-rapida, box-shadow $transicion-rapida;
+
+  @media (min-width: 768px) {
+    min-width: 280px;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $sombra-hover;
+  }
+
+  h3 {
+    color: $color-primario;
+    margin: 20px 0 10px 0;
+    padding: 0 20px;
+  }
+
+  p {
+    color: $color-texto-suave;
+    font-size: 0.95rem;
+    padding: 0 20px 24px 20px;
+    line-height: 1.5;
+  }
+}
+
+.producto-img-contenedor {
+  width: 100%;
+  height: 260px;
+  background: $color-fondo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.producto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+// ==========================================================================
+// CONTACTO
+// ==========================================================================
+.contacto {
+  max-width: 600px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+  text-align: center;
+
+  &-titulo {
+    font-size: 1.8rem;
+    color: $color-primario;
+    margin-bottom: 10px;
+
+    @media (min-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &-subtitulo {
+    color: $color-texto-suave;
+    margin-bottom: 32px;
+  }
+}
+
+.formulario-contacto {
+  background: #fff;
+  padding: 24px;
+  border-radius: $radio-tarjeta;
+  box-shadow: $sombra-suave;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    padding: 32px;
+  }
+}
+
+.campo {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-weight: 600;
+    color: $color-texto;
+    font-size: 0.9rem;
+  }
+
+  input,
+  textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 12px 14px;
+    border: 1px solid $color-borde;
+    border-radius: 8px;
+    background: $color-fondo;
+    color: $color-texto;
+    transition: border-color $transicion-rapida, box-shadow $transicion-rapida;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-color: $color-acento;
+      box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.15);
+    }
+  }
+}
+
+.error-contacto {
+  color: $color-error;
+  font-size: 0.9rem;
+  min-height: 1.2em;
+  margin-bottom: 12px;
+}
+
+.cta-formulario {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.lista-mensajes {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  text-align: left;
+
+  li {
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: $color-texto-secundario;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+}
+
+.boton-descargar {
+  display: block;
+  margin: 16px auto 0 auto;
+  background: transparent;
+  border: 1px solid $color-primario;
+  color: $color-primario;
+  padding: 10px 20px;
+  border-radius: $radio-boton;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: background $transicion-rapida, color $transicion-rapida;
+
+  &:hover {
+    background: $color-primario;
+    color: #fff;
+  }
+}
+
+// ==========================================================================
+// FOOTER
+// ==========================================================================
+.footer {
+  background: $color-primario-oscuro;
+  padding: 30px 40px 20px 40px;
+  margin-top: 60px;
+
+  &-copy {
+    text-align: center;
+    color: $color-footer-texto;
+    font-size: 0.85rem;
+  }
+}
+
+// ==========================================================================
+// ANIMACIONES (@keyframes no se pueden anidar, van a nivel raíz)
+// ==========================================================================
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rebote {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulsoKefir {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(72, 187, 120, 0); }
+  100% { transform: scale(1); }
+}
