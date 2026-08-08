@@ -338,6 +338,73 @@ body {
 }
 
 // ==========================================================================
+// TESTIMONIOS
+// ==========================================================================
+.testimonios {
+  max-width: 1200px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+
+  &-titulo {
+    text-align: center;
+    font-size: 1.8rem;
+    color: $color-primario;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  &-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+}
+
+.testimonio-tarjeta {
+  background: #fff;
+  padding: 28px 24px;
+  border-radius: $radio-tarjeta;
+  box-shadow: $sombra-suave;
+  flex: 1;
+  min-width: 100%;
+  max-width: 350px;
+  text-align: center;
+  transition: transform $transicion-rapida, box-shadow $transicion-rapida;
+
+  @media (min-width: 768px) {
+    min-width: 280px;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: $sombra-hover;
+  }
+}
+
+.testimonio-texto {
+  color: $color-texto-secundario;
+  font-style: italic;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.testimonio-nombre {
+  display: block;
+  color: $color-primario;
+}
+
+.testimonio-ubicacion {
+  display: block;
+  color: $color-texto-suave;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+// ==========================================================================
 // CONTACTO
 // ==========================================================================
 .contacto {
